@@ -49,4 +49,4 @@ Sample requests are provided in the IntelliJ HTTP Client format.
 
 ---
 **Submitted by:** Belete Siyum  
-**Submitted To:** M.r Demeke G.
+**Submitted To:** Mr Demeke G.
