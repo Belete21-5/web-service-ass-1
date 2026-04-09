@@ -117,3 +117,19 @@ Content-Type: text/xml
         </gs:RectangleAreaRequest>
     </soapenv:Body>
 </soapenv:Envelope>
+
+###
+
+### Test 7: Negative squere Dimension (Invalid)
+POST http://localhost:8080/ws
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://woldia.edu/shapetool">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:SquareAreaRequest>
+            <gs:side>-5.0</gs:side>
+        </gs:SquareAreaRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
