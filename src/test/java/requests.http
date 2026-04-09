@@ -120,7 +120,7 @@ Content-Type: text/xml
 
 ###
 
-### Test 7: Negative squere Dimension (Invalid)
+### Test 8: Negative squere Dimension (Invalid)
 POST http://localhost:8080/ws
 Content-Type: text/xml
 
@@ -131,5 +131,37 @@ Content-Type: text/xml
         <gs:SquareAreaRequest>
             <gs:side>-5.0</gs:side>
         </gs:SquareAreaRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+### Test 9: Negative Parallelogram Dimension (Invalid)
+POST http://localhost:8080/ws
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://woldia.edu/shapetool">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:ParallelogramAreaRequest>
+            <gs:base>-8.0</gs:base>
+            <gs:height>4.0</gs:height>
+        </gs:ParallelogramAreaRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+###
+
+### Test 10: Negative Triangle Dimension (Invalid)
+POST http://localhost:8080/ws
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://woldia.edu/shapetool">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:TriangleAreaRequest>
+            <gs:base>10.0</gs:base>
+            <gs:height>-6.0</gs:height>
+        </gs:TriangleAreaRequest>
     </soapenv:Body>
 </soapenv:Envelope>
