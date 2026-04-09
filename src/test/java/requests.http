@@ -1,0 +1,119 @@
+### ==========================================
+### 1. POSITIVE TESTS (Should Return 200 OK)
+### ==========================================
+
+### Test 1: Circle Area (Area = PI * 10^2)
+POST http://localhost:8080/ws
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://woldia.edu/shapetool">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:CircleAreaRequest>
+            <gs:radius>10.0</gs:radius>
+        </gs:CircleAreaRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+###
+
+### Test 2: Square Area (Area = 5 * 5)
+POST http://localhost:8080/ws
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://woldia.edu/shapetool">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:SquareAreaRequest>
+            <gs:side>5.0</gs:side>
+        </gs:SquareAreaRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+###
+
+### Test 3: Rectangle Area (Area = 10 * 5)
+POST http://localhost:8080/ws
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://woldia.edu/shapetool">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:RectangleAreaRequest>
+            <gs:length>10.0</gs:length>
+            <gs:width>5.0</gs:width>
+        </gs:RectangleAreaRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+###
+
+### Test 4: Parallelogram Area (Area = 8 * 4)
+POST http://localhost:8080/ws
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://woldia.edu/shapetool">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:ParallelogramAreaRequest>
+            <gs:base>8.0</gs:base>
+            <gs:height>4.0</gs:height>
+        </gs:ParallelogramAreaRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+###
+
+### Test 5: Triangle Area (Area = 0.5 * 10 * 6)
+POST http://localhost:8080/ws
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://woldia.edu/shapetool">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:TriangleAreaRequest>
+            <gs:base>10.0</gs:base>
+            <gs:height>6.0</gs:height>
+        </gs:TriangleAreaRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+### ==========================================
+### 2. NEGATIVE TESTS (Should Return SOAP Fault)
+### ==========================================
+
+### Test 6: Negative Circle Radius (Invalid)
+POST http://localhost:8080/ws
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://woldia.edu/shapetool">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:CircleAreaRequest>
+            <gs:radius>-1.0</gs:radius>
+        </gs:CircleAreaRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+###
+
+### Test 7: Negative Rectangle Dimension (Invalid)
+POST http://localhost:8080/ws
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://woldia.edu/shapetool">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:RectangleAreaRequest>
+            <gs:length>-10.0</gs:length>
+            <gs:width>5.0</gs:width>
+        </gs:RectangleAreaRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
