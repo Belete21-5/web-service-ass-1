@@ -4,7 +4,7 @@
 This project is a **SOAP Web Service** developed as part of a Web Services assignment. It provides a set of tools to calculate the surface area of various geometric shapes. The project follows a **Contract-First** development approach, utilizing an XSD schema to define the data structures and validation rules.
 
 ## Technologies Used
-* **Java 17+**
+* **Java 21**
 * **Spring Boot 4.0.5**
 * **Spring Web Services**
 * **JAXB** (for XML-to-Java binding)
@@ -49,4 +49,4 @@ Sample requests are provided in the IntelliJ HTTP Client format.
 
 ---
 **Submitted by:** Belete Siyum  
-**Academic Year:** 2026
+**Submitted To:** M.r Demeke G.
